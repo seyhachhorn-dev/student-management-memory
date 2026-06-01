@@ -105,6 +105,5 @@ def find_top_student():
    print(f"Top student: Id: {max_score_student['id']}, Name: {max_score_student['name']}, Score: {max_score_student['score']}")
    print("===============================")
 
-if __name__ == "__main__":
-   main_menu()
+main_menu()
 
