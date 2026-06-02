@@ -1,7 +1,4 @@
-
-
-from ast import While
-
+      
 
 print("=====================================")
 print(r"""
@@ -43,13 +40,14 @@ def main_menu():
         break
      else:
         print("Invalid choice. Please try again.")
-        break
+        
 
 students = []
 
 def add_student():
    id = len(students) + 1
-   name = str(input("Please Enter Student Name: "))
+   name = input("Please Enter Student Name: ")
+
    score = float(input("Please Enter Student Score: "))
    students.append({"id": id, "name": name, "score": score})
 
@@ -83,13 +81,12 @@ def delete_student():
    print("Delete Student")
    print("===============================")
    student_id = int(input("Please Enter Student ID to Delete: "))
-   for stu  in students:
+   for stu in students:
       if stu['id'] == student_id:
          students.remove(stu)
          print("Student deleted successfully!")
          return
-      else:
-       print("Student not found.")
+   print("Student not found.")
    print("===============================")
 
 def find_top_student():
@@ -105,5 +102,9 @@ def find_top_student():
    print(f"Top student: Id: {max_score_student['id']}, Name: {max_score_student['name']}, Score: {max_score_student['score']}")
    print("===============================")
 
-main_menu()
+if __name__ == "__main__":
+    try:
+        main_menu()
+    except KeyboardInterrupt:
+        print("\nExiting the system. Goodbye!")
 
